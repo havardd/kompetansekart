@@ -6,15 +6,20 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="controls">
-    <input type="file" id="loadConfig" />
-    <button onclick="saveConfig()">Last ned konfigurasjon</button>
-    <button onclick="exportToPNG()">Eksporter som bilde</button>
+  <div style="max-width: 1200px; margin: 0 auto; padding: 2em 1em;">
+    <h1 style="margin-bottom:0.5em;">Universelt Kompetansekart</h1>
+    <p style="color:#4b5563; margin-bottom:2em; font-size:1.1em;">
+      Visualiser og utforsk kompetanseområder. Last opp eller last ned kompetansekart-data, eller eksporter visualiseringen som bilde.
+    </p>
+    <div class="controls">
+      <input type="file" id="loadConfig" />
+      <button onclick="saveConfig()">Last ned konfigurasjon</button>
+      <button onclick="exportToPNG()">Eksporter som bilde</button>
+      <button id="resetViewBtn" type="button">Tilbakestill visning</button>
+    </div>
+    <div id="adminPanel"></div>
+    <div id="kompetansekart"></div>
   </div>
-
-  <div id="adminPanel"></div>
-  <div id="chart"></div>
-  <div id="kompetansekart"></div>
 
   <script src="https://cdn.plot.ly/plotly-2.24.2.min.js"></script>
   <script src="app.js"></script>
@@ -109,12 +114,16 @@ function renderKompetansekart(json) {
   Plotly.newPlot('kompetansekart', sunburstData, layout);
 }
 
+function loadDefaultKompetansekart() {
+  fetch('kompetanse_data_med_prosjekter.json')
+    .then(response => response.json())
+    .then(json => {
+      renderKompetansekart(json);
+    });
+}
+
 // Last inn standarddata fra server
-fetch('kompetanse_data_med_prosjekter.json')
-  .then(response => response.json())
-  .then(json => {
-    renderKompetansekart(json);
-  });
+loadDefaultKompetansekart();
 
 // Lytt på filopplasting
 document.getElementById('loadConfig').addEventListener('change', function(event) {
@@ -130,6 +139,11 @@ document.getElementById('loadConfig').addEventListener('change', function(event)
     }
   };
   reader.readAsText(file);
+});
+
+// Tilbakestill visning-knapp
+document.getElementById('resetViewBtn').addEventListener('click', function() {
+  loadDefaultKompetansekart();
 });
 </script>
 </body>
