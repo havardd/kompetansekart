@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <title>Opprett Kompetansekart</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .editor-table { border-collapse: collapse; width: 100%; margin-bottom: 1em; }
+    .editor-table th, .editor-table td { border: 1px solid #ccc; padding: 0.3em; }
+    .editor-table th { background: #f0f0f0; }
+    .editor-controls { margin-bottom: 1em; }
+    .editor-controls button { margin-right: 0.5em; }
+    .small-input { width: 6em; }
+  </style>
+</head>
+<body>
+  <h1>Opprett/rediger kompetansekart</h1>
+  <div class="editor-controls">
+    <input type="file" id="importJson" />
+    <button onclick="exportJson()">Eksporter til JSON</button>
+    <button onclick="addRow()">Legg til rad</button>
+    <button onclick="clearAll()">Tøm alt</button>
+  </div>
+  <div id="editor"></div>
+  <a id="downloadLink" style="display:none"></a>
+  <script>
+const defaultFields = [
+  "Domene", "Fagområde", "Kjerneelement", "Læreplanmål", "Kompetanseområde",
+  "Nivå", "Prosjekt/Oppgave", "Beskrivelse", "Periode"
+];
+
+let kompetanseData = [];
+
+function renderEditor() {
+  const editor = document.getElementById('editor');
+  if (!kompetanseData.length) {
+    editor.innerHTML = "<em>Ingen data. Legg til en rad.</em>";
+    return;
+  }
+  let html = '<table class="editor-table"><thead><tr>';
+  defaultFields.forEach(f => html += `<th>${f}</th>`);
+  html += '<th>Slett</th></tr></thead><tbody>';
+  kompetanseData.forEach((row, idx) => {
+    html += '<tr>';
+    defaultFields.forEach(field => {
+      html += `<td><input class="small-input" type="text" value="${row[field]||''}" 
+        onchange="updateCell(${idx},'${field}',this.value)" /></td>`;
+    });
+    html += `<td><button onclick="deleteRow(${idx})">Slett</button></td></tr>`;
+  });
+  html += '</tbody></table>';
+  editor.innerHTML = html;
+}
+
+function updateCell(idx, field, value) {
+  kompetanseData[idx][field] = value;
+}
+
+function addRow() {
+  let newRow = {};
+  defaultFields.forEach(f => newRow[f] = "");
+  kompetanseData.push(newRow);
+  renderEditor();
+}
+
+function deleteRow(idx) {
+  kompetanseData.splice(idx, 1);
+  renderEditor();
+}
+
+function clearAll() {
+  if (confirm("Er du sikker på at du vil tømme alt?")) {
+    kompetanseData = [];
+    renderEditor();
+  }
+}
+
+function exportJson() {
+  const json = {
+    data: kompetanseData,
+    layout: {},
+    config: {}
+  };
+  const blob = new Blob([JSON.stringify(json, null, 2)], {type: "application/json"});
+  const url = URL.createObjectURL(blob);
+  const link = document.getElementById('downloadLink');
+  link.href = url;
+  link.download = "kompetanse_data_med_prosjekter.json";
+  link.style.display = "none";
+  link.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+document.getElementById('importJson').addEventListener('change', function(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      const json = JSON.parse(e.target.result);
+      if (Array.isArray(json.data)) {
+        kompetanseData = json.data.map(row => {
+          // Sikre at alle felter finnes
+          let r = {};
+          defaultFields.forEach(f => r[f] = row[f] || "");
+          return r;
+        });
+        renderEditor();
+      } else {
+        alert("Ugyldig filformat: mangler 'data'-array");
+      }
+    } catch (err) {
+      alert("Kunne ikke lese filen: " + err.message);
+    }
+  };
+  reader.readAsText(file);
+});
+
+// Init tom editor
+renderEditor();
+  </script>
+</body>
+</html>

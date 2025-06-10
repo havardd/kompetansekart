@@ -1,0 +1,55 @@
+Domene,Fagområde,Kjerneelement,Læreplanmål,Kompetanseområde,Nivå,Prosjekt/Oppgave
+Informasjonsteknologi,Konseptutvikling og programmering,Programmering,Læreplanmål - Python,Python,6,Laget REST API med Flask
+Informasjonsteknologi,Konseptutvikling og programmering,Programmering,Læreplanmål - Python,Python,6,Bygget datavisualisering i Jupyter
+Informasjonsteknologi,Konseptutvikling og programmering,Programmering,Læreplanmål - Python,Python,6,Automatisert rapportering med Python-skript
+Informasjonsteknologi,Konseptutvikling og programmering,Programmering,Læreplanmål - HTML/CSS,HTML/CSS,9,Designet responsiv nettside
+Informasjonsteknologi,Konseptutvikling og programmering,Programmering,Læreplanmål - HTML/CSS,HTML/CSS,9,Utviklet tilpasset mal for skoleportal
+Informasjonsteknologi,Konseptutvikling og programmering,Programmering,Læreplanmål - HTML/CSS,HTML/CSS,9,Optimaliserte CSS for ytelse og mobil
+Informasjonsteknologi,Konseptutvikling og programmering,Programmering,Læreplanmål - JavaScript,JavaScript,6,Implementerte interaktiv frontend
+Informasjonsteknologi,Konseptutvikling og programmering,Programmering,Læreplanmål - JavaScript,JavaScript,6,Laget dynamiske skjemaer med validering
+Informasjonsteknologi,Konseptutvikling og programmering,Programmering,Læreplanmål - JavaScript,JavaScript,6,Bygget enkle spill med JS og canvas
+Informasjonsteknologi,Systemdrift og nettverk,Systemdrift,Læreplanmål - Windows Server,Windows Server,7,Satt opp Active Directory
+Informasjonsteknologi,Systemdrift og nettverk,Systemdrift,Læreplanmål - Windows Server,Windows Server,7,Konfigurerte brukerkvoter
+Informasjonsteknologi,Systemdrift og nettverk,Systemdrift,Læreplanmål - Windows Server,Windows Server,7,Overvåket ytelse med Event Viewer
+Informasjonsteknologi,Systemdrift og nettverk,Systemdrift,Læreplanmål - DNS,DNS,9,Konfigurerte intern DNS
+Informasjonsteknologi,Systemdrift og nettverk,Systemdrift,Læreplanmål - DNS,DNS,9,Implementerte DNSSEC
+Informasjonsteknologi,Systemdrift og nettverk,Systemdrift,Læreplanmål - DNS,DNS,9,Feilsøkte oppslag i nettverksmiljø
+Informasjonsteknologi,Systemdrift og nettverk,Systemdrift,Læreplanmål - DHCP,DHCP,9,Driftet DHCP-server
+Informasjonsteknologi,Systemdrift og nettverk,Systemdrift,Læreplanmål - DHCP,DHCP,9,Reservasjoner og statisk tildeling
+Informasjonsteknologi,Systemdrift og nettverk,Systemdrift,Læreplanmål - DHCP,DHCP,9,Feilsøking av tildelingsproblemer
+Informasjonsteknologi,Teknologiforståelse,Digital sikkerhet,Læreplanmål - Brannmur,Brannmur,9,Konfigurert brannmur i pfSense
+Informasjonsteknologi,Teknologiforståelse,Digital sikkerhet,Læreplanmål - Brannmur,Brannmur,9,Bygget regelsett for kontor
+Informasjonsteknologi,Teknologiforståelse,Digital sikkerhet,Læreplanmål - Brannmur,Brannmur,9,Testet portfiltrering
+Informasjonsteknologi,Teknologiforståelse,Digital sikkerhet,Læreplanmål - Tofaktorautentisering,Tofaktorautentisering,10,Implementert 2FA i webapplikasjon
+Informasjonsteknologi,Teknologiforståelse,Digital sikkerhet,Læreplanmål - Tofaktorautentisering,Tofaktorautentisering,10,Testet bruk av SMS og e-post som 2FA
+Informasjonsteknologi,Teknologiforståelse,Digital sikkerhet,Læreplanmål - Tofaktorautentisering,Tofaktorautentisering,10,Integrert 2FA med Microsoft Entra ID
+Informasjonsteknologi,Teknologiforståelse,Digital sikkerhet,Læreplanmål - Sikkerhetskopiering,Sikkerhetskopiering,6,Automatisert backup med PowerShell
+Informasjonsteknologi,Teknologiforståelse,Digital sikkerhet,Læreplanmål - Sikkerhetskopiering,Sikkerhetskopiering,6,Konfigurert rsync for lokal sikkerhetskopi
+Informasjonsteknologi,Teknologiforståelse,Digital sikkerhet,Læreplanmål - Sikkerhetskopiering,Sikkerhetskopiering,6,Lagret sikkerhetskopier i skyen
+Medieproduksjon,Produksjon og historiefortelling,Medieproduksjon,Læreplanmål - Kameraoppsett,Kameraoppsett,7,Filmet kampanjevideo
+Medieproduksjon,Produksjon og historiefortelling,Medieproduksjon,Læreplanmål - Kameraoppsett,Kameraoppsett,7,Satt opp flerkameraproduksjon
+Medieproduksjon,Produksjon og historiefortelling,Medieproduksjon,Læreplanmål - Kameraoppsett,Kameraoppsett,7,Testet kameravinkler og fokus
+Medieproduksjon,Produksjon og historiefortelling,Medieproduksjon,Læreplanmål - Lyssetting,Lyssetting,10,Planla lysrigg for filmopptak
+Medieproduksjon,Produksjon og historiefortelling,Medieproduksjon,Læreplanmål - Lyssetting,Lyssetting,10,Testet mykt og hardt lys
+Medieproduksjon,Produksjon og historiefortelling,Medieproduksjon,Læreplanmål - Lyssetting,Lyssetting,10,Brukte fargefiltre for effekt
+Medieproduksjon,Produksjon og historiefortelling,Medieproduksjon,Læreplanmål - Storyboarding,Storyboarding,10,Lagde storyboard for reklamefilm
+Medieproduksjon,Produksjon og historiefortelling,Medieproduksjon,Læreplanmål - Storyboarding,Storyboarding,10,Brukte Canva til visuell plan
+Medieproduksjon,Produksjon og historiefortelling,Medieproduksjon,Læreplanmål - Storyboarding,Storyboarding,10,Presenterte storyboard for kunde
+Medieproduksjon,Design og visuell kommunikasjon,Design,Læreplanmål - Adobe Illustrator,Adobe Illustrator,7,Designet brosjyre
+Medieproduksjon,Design og visuell kommunikasjon,Design,Læreplanmål - Adobe Illustrator,Adobe Illustrator,7,Laget logo i vektorgrafikk
+Medieproduksjon,Design og visuell kommunikasjon,Design,Læreplanmål - Adobe Illustrator,Adobe Illustrator,7,Lagde plakat til arrangement
+Medieproduksjon,Design og visuell kommunikasjon,Design,Læreplanmål - Typografi,Typografi,9,Brukte typografi i webdesign
+Medieproduksjon,Design og visuell kommunikasjon,Design,Læreplanmål - Typografi,Typografi,9,Laget bokomslag med fontvalg
+Medieproduksjon,Design og visuell kommunikasjon,Design,Læreplanmål - Typografi,Typografi,9,Eksperimenterte med fontpar
+Medieproduksjon,Design og visuell kommunikasjon,Design,Læreplanmål - Fargebruk,Fargebruk,10,Definerte fargepalett
+Medieproduksjon,Design og visuell kommunikasjon,Design,Læreplanmål - Fargebruk,Fargebruk,10,Tilpasset farger for universell utforming
+Medieproduksjon,Design og visuell kommunikasjon,Design,Læreplanmål - Fargebruk,Fargebruk,10,Evaluerte fargekontraster
+Medieproduksjon,"Lyd, bilde og redigering",Lyd/bilde,Læreplanmål - Adobe Premiere,Adobe Premiere,9,Redigerte intervjuserie
+Medieproduksjon,"Lyd, bilde og redigering",Lyd/bilde,Læreplanmål - Adobe Premiere,Adobe Premiere,9,Klippet musikkvideo
+Medieproduksjon,"Lyd, bilde og redigering",Lyd/bilde,Læreplanmål - Adobe Premiere,Adobe Premiere,9,Brukte effekter og overganger
+Medieproduksjon,"Lyd, bilde og redigering",Lyd/bilde,Læreplanmål - Videoredigering,Videoredigering,8,Produserte kortfilm
+Medieproduksjon,"Lyd, bilde og redigering",Lyd/bilde,Læreplanmål - Videoredigering,Videoredigering,8,Synkroniserte lyd og bilde
+Medieproduksjon,"Lyd, bilde og redigering",Lyd/bilde,Læreplanmål - Videoredigering,Videoredigering,8,Eksporterte i ulike formater
+Medieproduksjon,"Lyd, bilde og redigering",Lyd/bilde,Læreplanmål - Lydmiksing,Lydmiksing,5,Mikset lydspor til film
+Medieproduksjon,"Lyd, bilde og redigering",Lyd/bilde,Læreplanmål - Lydmiksing,Lydmiksing,5,Brukte EQ og kompresjon
+Medieproduksjon,"Lyd, bilde og redigering",Lyd/bilde,Læreplanmål - Lydmiksing,Lydmiksing,5,Redigerte dialog og lydeffekter
