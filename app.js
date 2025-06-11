@@ -31,7 +31,7 @@ let config = {
   
   // Eksporter som bilde
   function exportToPNG() {
-    Plotly.toImage(document.getElementById("chart"), { format: 'png' }).then(dataUrl => {
+    Plotly.toImage(document.getElementById("kompetansekart"), { format: 'png' }).then(dataUrl => {
       const a = document.createElement("a");
       a.href = dataUrl;
       a.download = "kompetansekart.png";
@@ -39,29 +39,7 @@ let config = {
     });
   }
   
-  // Dynamisk admin-panel (veldig enkel versjon)
-  function updateAdminPanel() {
-    const adminPanel = document.getElementById("adminPanel");
-    adminPanel.innerHTML = '<button onclick="addNewField()">Legg til nytt felt</button>';
-  }
-  
-  // Legg til nytt felt
-  function addNewField() {
-    const label = prompt("Skriv inn navnet på feltet:");
-    if (label) {
-      config.data.push({
-        type: "bar",
-        x: [label],
-        y: [1],
-        name: label
-      });
-      renderChart();
-    }
-  }
-  
   // Tegn diagram
   function renderChart() {
-    Plotly.newPlot('chart', config.data, config.layout);
-    updateAdminPanel();
+    Plotly.newPlot('kompetansekart', config.data, config.layout);
   }
-  

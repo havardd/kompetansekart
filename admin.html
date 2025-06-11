@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin – Kompetansekart</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .editor-table { border-collapse: collapse; width: 100%; margin-bottom: 1em; }
+    .editor-table th, .editor-table td { border: 1px solid #ccc; padding: 0.3em; }
+    .editor-table th { background: #f0f0f0; }
+    .editor-controls { margin-bottom: 1em; }
+    .editor-controls button { margin-right: 0.5em; }
+    .small-input { width: 6em; }
+    .long-input { width: 100%; }
+    nav.menu-nav {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      margin-bottom: 2em;
+    }
+  </style>
+</head>
+<body>
+  <nav class="menu-nav">
+    <a href="index.html" class="menu-link">Hjem</a>
+    <a href="admin.html" class="menu-link">Admin</a>
+    <a href="meny.html" class="menu-link">Meny</a>
+  </nav>
+  <div style="max-width: 1200px; margin: 0 auto; padding: 2em 1em;">
+    <h1 style="margin-bottom:0.5em;">Admin: Opprett/rediger kompetansekart</h1>
+    <p style="color:#4b5563; margin-bottom:2em; font-size:1.1em;">
+      Administrer kompetansekart-data. Importer, rediger og eksporter kompetansekart som JSON-fil.
+    </p>
+    <div class="editor-controls">
+      <input type="file" id="importJson" />
+      <button onclick="exportJson()">Eksporter til JSON</button>
+      <button onclick="addRow()">Legg til rad</button>
+      <button onclick="clearAll()">Tøm alt</button>
+    </div>
+    <div id="editor"></div>
+    <a id="downloadLink" style="display:none"></a>
+  </div>
+  <script>
+    const defaultFields = [
+      "Fagområde", "Kjerneelement", "Læreplanmål", "Kompetanseområde",
+      "Nivå", "Prosjekt/Oppgave", "Beskrivelse", "Periode",
+      "Domene", "Profesjon", "Overordnetkategori", "Navn", "Yrke"
+    ];
+
+    const dropdownFields = [
+      "Domene", "Fagområde", "Kjerneelement", "Læreplanmål", "Kompetanseområde",
+      "Nivå", "Periode", "Profesjon", "Overordnetkategori", "Yrke"
+    ];
+
+    let dropdownValues = {};
+    dropdownFields.forEach(f => dropdownValues[f] = []);
+
+    let kompetanseData = [];
+
+    function updateDropdownValuesFromData() {
+      dropdownFields.forEach(field => {
+        const values = new Set(dropdownValues[field]);
+        kompetanseData.forEach(row => {
+          if (row[field] && row[field] !== "") values.add(row[field]);
+        });
+        dropdownValues[field] = Array.from(values);
+      });
+    }
+
+    function renderEditor() {
+      updateDropdownValuesFromData();
+      const editor = document.getElementById('editor');
+      if (!kompetanseData.length) {
+        editor.innerHTML = "<em>Ingen data. Legg til en rad.</em>";
+        return;
+      }
+      let html = '<table class="editor-table"><thead><tr>';
+      defaultFields.forEach(f => {
+        // Øk bredden for Domene, Fagområde, Kjerneelement, Læreplanmål
+        if (f === "Prosjekt/Oppgave" || f === "Beskrivelse") {
+          html += `<th style="min-width:220px; width:28%; min-height:3em; height:auto;">${f}</th>`;
+        } else if (f === "Fagområde") {
+          html += `<th style="min-width:300px; max-width:600px; width:auto; white-space:normal;">${f}</th>`;
+        } else if (f === "Domene" || f === "Kjerneelement" || f === "Læreplanmål") {
+          html += `<th style="min-width:240px; max-width:500px; width:auto; white-space:normal;">${f}</th>`;
+        } else {
+          html += `<th style="min-width:180px; max-width:400px; width:auto; white-space:normal;">${f}</th>`;
+        }
+      });
+      html += '<th>Lag kopi</th><th>Slett</th></tr></thead><tbody>';
+      kompetanseData.forEach((row, idx) => {
+        html += '<tr>';
+        defaultFields.forEach(field => {
+          if (dropdownFields.includes(field)) {
+            if (field === "Fagområde") {
+              html += `<td style="min-width:300px; max-width:600px; width:auto; white-space:normal;">
+                <select class="small-input" onchange="onDropdownChange(${idx},'${field}',this)">
+                  ${dropdownValues[field].map(val => `<option value="${val}"${row[field]===val?' selected':''}>${val}</option>`).join('')}
+                  <option value="__add_new__">+ Legg til ny...</option>
+                </select>
+              </td>`;
+            } else if (field === "Domene" || field === "Kjerneelement" || field === "Læreplanmål") {
+              html += `<td style="min-width:240px; max-width:500px; width:auto; white-space:normal;">
+                <select class="small-input" onchange="onDropdownChange(${idx},'${field}',this)">
+                  ${dropdownValues[field].map(val => `<option value="${val}"${row[field]===val?' selected':''}>${val}</option>`).join('')}
+                  <option value="__add_new__">+ Legg til ny...</option>
+                </select>
+              </td>`;
+            } else {
+              html += `<td style="min-width:180px; max-width:400px; width:auto; white-space:normal;">
+                <select class="small-input" onchange="onDropdownChange(${idx},'${field}',this)">
+                  ${dropdownValues[field].map(val => `<option value="${val}"${row[field]===val?' selected':''}>${val}</option>`).join('')}
+                  <option value="__add_new__">+ Legg til ny...</option>
+                </select>
+              </td>`;
+            }
+          } else if (field === "Prosjekt/Oppgave" || field === "Beskrivelse") {
+            html += `<td style="min-width:220px; width:28%; min-height:3em; height:auto;">
+              <textarea class="small-input long-input" rows="3" style="min-height:3em;" onchange="updateCell(${idx},'${field}',this.value)">${row[field]||''}</textarea>
+            </td>`;
+          } else if (field === "Fagområde") {
+            html += `<td style="min-width:300px; max-width:600px; width:auto; white-space:normal;">
+              <input class="small-input" type="text" value="${row[field]||''}" onchange="updateCell(${idx},'${field}',this.value)" />
+            </td>`;
+          } else if (field === "Domene" || field === "Kjerneelement" || field === "Læreplanmål") {
+            html += `<td style="min-width:240px; max-width:500px; width:auto; white-space:normal;">
+              <input class="small-input" type="text" value="${row[field]||''}" onchange="updateCell(${idx},'${field}',this.value)" />
+            </td>`;
+          } else {
+            html += `<td style="min-width:180px; max-width:400px; width:auto; white-space:normal;">
+              <input class="small-input" type="text" value="${row[field]||''}" onchange="updateCell(${idx},'${field}',this.value)" />
+            </td>`;
+          }
+        });
+        html += `<td><button onclick="duplicateRow(${idx})">Kopier</button></td>`;
+        html += `<td><button onclick="deleteRow(${idx})">Slett</button></td></tr>`;
+      });
+      html += '</tbody></table>';
+      editor.innerHTML = html;
+    }
+
+    function onDropdownChange(idx, field, selectElem) {
+      if (selectElem.value === "__add_new__") {
+        let nyVerdi = prompt(`Skriv inn ny verdi for ${field}:`);
+        if (nyVerdi && nyVerdi.trim() !== "") {
+          nyVerdi = nyVerdi.trim();
+          if (!dropdownValues[field].includes(nyVerdi)) {
+            dropdownValues[field].push(nyVerdi);
+          }
+          kompetanseData[idx][field] = nyVerdi;
+          renderEditor();
+        } else {
+          selectElem.value = kompetanseData[idx][field] || "";
+        }
+      } else {
+        kompetanseData[idx][field] = selectElem.value;
+      }
+    }
+
+    function updateCell(idx, field, value) {
+      kompetanseData[idx][field] = value;
+    }
+
+    function addRow() {
+      let newRow = {};
+      defaultFields.forEach(f => newRow[f] = "");
+      kompetanseData.push(newRow);
+      renderEditor();
+    }
+
+    function deleteRow(idx) {
+      kompetanseData.splice(idx, 1);
+      renderEditor();
+    }
+
+    function duplicateRow(idx) {
+      const copy = { ...kompetanseData[idx] };
+      kompetanseData.splice(idx + 1, 0, copy);
+      renderEditor();
+    }
+
+    function clearAll() {
+      if (confirm("Er du sikker på at du vil tømme alt?")) {
+        kompetanseData = [];
+        renderEditor();
+      }
+    }
+
+    function exportJson() {
+      const json = {
+        data: kompetanseData,
+        layout: {},
+        config: {}
+      };
+      const blob = new Blob([JSON.stringify(json, null, 2)], {type: "application/json"});
+      const url = URL.createObjectURL(blob);
+      const link = document.getElementById('downloadLink');
+      link.href = url;
+      link.download = "kompetanse_data_med_prosjekter.json";
+      link.style.display = "none";
+      link.click();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+
+    document.getElementById('importJson').addEventListener('change', function(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const json = JSON.parse(e.target.result);
+          if (Array.isArray(json.data)) {
+            kompetanseData = json.data.map(row => {
+              let r = {};
+              defaultFields.forEach(f => r[f] = row[f] || "");
+              return r;
+            });
+            renderEditor();
+          } else {
+            alert("Ugyldig filformat: mangler 'data'-array");
+          }
+        } catch (err) {
+          alert("Kunne ikke lese filen: " + err.message);
+        }
+      };
+      reader.readAsText(file);
+    });
+
+    renderEditor();
+  </script>
+</body>
+</html>
+``` 

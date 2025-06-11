@@ -1,492 +1,94 @@
 {
   "data": [
     {
-      "Domene":"Informasjonsteknologi",
-      "Fagområde":"Konseptutvikling og programmering",
-      "Kjerneelement":"Programmering",
-      "Læreplanmål":"Læreplanmål - Python",
-      "Kompetanseområde":"Python",
-      "Nivå":6,
-      "Prosjekt\/Oppgave":"Laget REST API med Flask",
+      "Navn": "Lars Hansen",
+      "Profesjon": "IT-utvikler",
+      "Overordnetkategori": "Programmering",
+      "Domene": "Informasjonsteknologi",
+      "Fagområde": "Konseptutvikling og programmering",
+      "Kjerneelement": "Programmering",
+      "Læreplanmål": "Læreplanmål - Python",
+      "Kompetanseområde": "Python",
+      "Yrke": "IT-konsulent",
+      "Nivå": 6,
+      "Prosjekt/Oppgave": "Laget REST API med Flask",
       "Beskrivelse": "Utviklet et REST API for en webapplikasjon ved hjelp av Flask-rammeverket. Implementerte CRUD-operasjoner for enkle dataressurser.",
-      "Periode":"Høst 2024"
+      "Periode": "Høst 2024"
     },
     {
-      "Domene":"Informasjonsteknologi",
-      "Fagområde":"Konseptutvikling og programmering",
-      "Kjerneelement":"Programmering",
-      "Læreplanmål":"Læreplanmål - Python",
-      "Kompetanseområde":"Python",
-      "Nivå":6,
-      "Prosjekt\/Oppgave":"Bygget datavisualisering i Jupyter"
+      "Navn": "Lars Hansen",
+      "Profesjon": "IT-utvikler",
+      "Overordnetkategori": "Programmering",
+      "Domene": "Medieproduksjon",
+      "Fagområde": "Konseptutvikling og programmering",
+      "Kjerneelement": "Programmering",
+      "Læreplanmål": "Læreplanmål - Python",
+      "Kompetanseområde": "Python",
+      "Yrke": "IT-konsulent",
+      "Nivå": 6,
+      "Prosjekt/Oppgave": "Bygget datavisualisering i Jupyter",
+      "Beskrivelse": "Visualiserte data med matplotlib og seaborn.",
+      "Periode": "Vår 2024"
     },
     {
-      "Domene":"Informasjonsteknologi",
-      "Fagområde":"Konseptutvikling og programmering",
-      "Kjerneelement":"Programmering",
-      "Læreplanmål":"Læreplanmål - Python",
-      "Kompetanseområde":"Python",
-      "Nivå":6,
-      "Prosjekt\/Oppgave":"Automatisert rapportering med Python-skript"
+      "Navn": "Lars Hansen",
+      "Profesjon": "IT-utvikler",
+      "Overordnetkategori": "Programmering",
+      "Domene": "Økonomi og administrasjon",
+      "Fagområde": "Konseptutvikling og programmering",
+      "Kjerneelement": "Programmering",
+      "Læreplanmål": "Læreplanmål - Python",
+      "Kompetanseområde": "Python",
+      "Yrke": "IT-konsulent",
+      "Nivå": 6,
+      "Prosjekt/Oppgave": "Automatisert rapportering med Python-skript",
+      "Beskrivelse": "Lagde skript for å hente og sende rapporter automatisk.",
+      "Periode": "Vår 2024"
     },
     {
-      "Domene":"Informasjonsteknologi",
-      "Fagområde":"Konseptutvikling og programmering",
-      "Kjerneelement":"Programmering",
-      "Læreplanmål":"Læreplanmål - HTML\/CSS",
-      "Kompetanseområde":"HTML\/CSS",
-      "Nivå":9,
-      "Prosjekt\/Oppgave":"Designet responsiv nettside"
+      "Navn": "Lars Hansen",
+      "Profesjon": "Frontend-utvikler",
+      "Overordnetkategori": "Webutvikling",
+      "Domene": "Utdanning",
+      "Fagområde": "Konseptutvikling og programmering",
+      "Kjerneelement": "Programmering",
+      "Læreplanmål": "Læreplanmål - HTML/CSS",
+      "Kompetanseområde": "HTML/CSS",
+      "Yrke": "Webdesigner",
+      "Nivå": 9,
+      "Prosjekt/Oppgave": "Designet responsiv nettside",
+      "Beskrivelse": "Utviklet responsivt design for flere enheter.",
+      "Periode": "Høst 2023"
     },
     {
-      "Domene":"Informasjonsteknologi",
-      "Fagområde":"Konseptutvikling og programmering",
-      "Kjerneelement":"Programmering",
-      "Læreplanmål":"Læreplanmål - HTML\/CSS",
-      "Kompetanseområde":"HTML\/CSS",
-      "Nivå":9,
-      "Prosjekt\/Oppgave":"Utviklet tilpasset mal for skoleportal"
+      "Navn": "Lars Hansen",
+      "Profesjon": "Frontend-utvikler",
+      "Overordnetkategori": "Webutvikling",
+      "Domene": "Helsevitenskap",
+      "Fagområde": "Konseptutvikling og programmering",
+      "Kjerneelement": "Programmering",
+      "Læreplanmål": "Læreplanmål - HTML/CSS",
+      "Kompetanseområde": "HTML/CSS",
+      "Yrke": "Webdesigner",
+      "Nivå": 9,
+      "Prosjekt/Oppgave": "Utviklet tilpasset mal for skoleportal",
+      "Beskrivelse": "Lagde mal for skoleportal med universell utforming.",
+      "Periode": "Vår 2023"
     },
     {
-      "Domene":"Informasjonsteknologi",
-      "Fagområde":"Konseptutvikling og programmering",
-      "Kjerneelement":"Programmering",
-      "Læreplanmål":"Læreplanmål - HTML\/CSS",
-      "Kompetanseområde":"HTML\/CSS",
-      "Nivå":9,
-      "Prosjekt\/Oppgave":"Optimaliserte CSS for ytelse og mobil"
-    },
-    {
-      "Domene":"Informasjonsteknologi",
-      "Fagområde":"Konseptutvikling og programmering",
-      "Kjerneelement":"Programmering",
-      "Læreplanmål":"Læreplanmål - JavaScript",
-      "Kompetanseområde":"JavaScript",
-      "Nivå":6,
-      "Prosjekt\/Oppgave":"Implementerte interaktiv frontend"
-    },
-    {
-      "Domene":"Informasjonsteknologi",
-      "Fagområde":"Konseptutvikling og programmering",
-      "Kjerneelement":"Programmering",
-      "Læreplanmål":"Læreplanmål - JavaScript",
-      "Kompetanseområde":"JavaScript",
-      "Nivå":6,
-      "Prosjekt\/Oppgave":"Laget dynamiske skjemaer med validering"
-    },
-    {
-      "Domene":"Informasjonsteknologi",
-      "Fagområde":"Konseptutvikling og programmering",
-      "Kjerneelement":"Programmering",
-      "Læreplanmål":"Læreplanmål - JavaScript",
-      "Kompetanseområde":"JavaScript",
-      "Nivå":6,
-      "Prosjekt\/Oppgave":"Bygget enkle spill med JS og canvas"
-    },
-    {
-      "Domene":"Informasjonsteknologi",
-      "Fagområde":"Systemdrift og nettverk",
-      "Kjerneelement":"Systemdrift",
-      "Læreplanmål":"Læreplanmål - Windows Server",
-      "Kompetanseområde":"Windows Server",
-      "Nivå":7,
-      "Prosjekt\/Oppgave":"Satt opp Active Directory"
-    },
-    {
-      "Domene":"Informasjonsteknologi",
-      "Fagområde":"Systemdrift og nettverk",
-      "Kjerneelement":"Systemdrift",
-      "Læreplanmål":"Læreplanmål - Windows Server",
-      "Kompetanseområde":"Windows Server",
-      "Nivå":7,
-      "Prosjekt\/Oppgave":"Konfigurerte brukerkvoter"
-    },
-    {
-      "Domene":"Informasjonsteknologi",
-      "Fagområde":"Systemdrift og nettverk",
-      "Kjerneelement":"Systemdrift",
-      "Læreplanmål":"Læreplanmål - Windows Server",
-      "Kompetanseområde":"Windows Server",
-      "Nivå":7,
-      "Prosjekt\/Oppgave":"Overvåket ytelse med Event Viewer"
-    },
-    {
-      "Domene":"Informasjonsteknologi",
-      "Fagområde":"Systemdrift og nettverk",
-      "Kjerneelement":"Systemdrift",
-      "Læreplanmål":"Læreplanmål - DNS",
-      "Kompetanseområde":"DNS",
-      "Nivå":9,
-      "Prosjekt\/Oppgave":"Konfigurerte intern DNS"
-    },
-    {
-      "Domene":"Informasjonsteknologi",
-      "Fagområde":"Systemdrift og nettverk",
-      "Kjerneelement":"Systemdrift",
-      "Læreplanmål":"Læreplanmål - DNS",
-      "Kompetanseområde":"DNS",
-      "Nivå":9,
-      "Prosjekt\/Oppgave":"Implementerte DNSSEC"
-    },
-    {
-      "Domene":"Informasjonsteknologi",
-      "Fagområde":"Systemdrift og nettverk",
-      "Kjerneelement":"Systemdrift",
-      "Læreplanmål":"Læreplanmål - DNS",
-      "Kompetanseområde":"DNS",
-      "Nivå":9,
-      "Prosjekt\/Oppgave":"Feilsøkte oppslag i nettverksmiljø"
-    },
-    {
-      "Domene":"Informasjonsteknologi",
-      "Fagområde":"Systemdrift og nettverk",
-      "Kjerneelement":"Systemdrift",
-      "Læreplanmål":"Læreplanmål - DHCP",
-      "Kompetanseområde":"DHCP",
-      "Nivå":9,
-      "Prosjekt\/Oppgave":"Driftet DHCP-server"
-    },
-    {
-      "Domene":"Informasjonsteknologi",
-      "Fagområde":"Systemdrift og nettverk",
-      "Kjerneelement":"Systemdrift",
-      "Læreplanmål":"Læreplanmål - DHCP",
-      "Kompetanseområde":"DHCP",
-      "Nivå":9,
-      "Prosjekt\/Oppgave":"Reservasjoner og statisk tildeling"
-    },
-    {
-      "Domene":"Informasjonsteknologi",
-      "Fagområde":"Systemdrift og nettverk",
-      "Kjerneelement":"Systemdrift",
-      "Læreplanmål":"Læreplanmål - DHCP",
-      "Kompetanseområde":"DHCP",
-      "Nivå":9,
-      "Prosjekt\/Oppgave":"Feilsøking av tildelingsproblemer"
-    },
-    {
-      "Domene":"Informasjonsteknologi",
-      "Fagområde":"Teknologiforståelse",
-      "Kjerneelement":"Digital sikkerhet",
-      "Læreplanmål":"Læreplanmål - Brannmur",
-      "Kompetanseområde":"Brannmur",
-      "Nivå":9,
-      "Prosjekt\/Oppgave":"Konfigurert brannmur i pfSense"
-    },
-    {
-      "Domene":"Informasjonsteknologi",
-      "Fagområde":"Teknologiforståelse",
-      "Kjerneelement":"Digital sikkerhet",
-      "Læreplanmål":"Læreplanmål - Brannmur",
-      "Kompetanseområde":"Brannmur",
-      "Nivå":9,
-      "Prosjekt\/Oppgave":"Bygget regelsett for kontor"
-    },
-    {
-      "Domene":"Informasjonsteknologi",
-      "Fagområde":"Teknologiforståelse",
-      "Kjerneelement":"Digital sikkerhet",
-      "Læreplanmål":"Læreplanmål - Brannmur",
-      "Kompetanseområde":"Brannmur",
-      "Nivå":9,
-      "Prosjekt\/Oppgave":"Testet portfiltrering"
-    },
-    {
-      "Domene":"Informasjonsteknologi",
-      "Fagområde":"Teknologiforståelse",
-      "Kjerneelement":"Digital sikkerhet",
-      "Læreplanmål":"Læreplanmål - Tofaktorautentisering",
-      "Kompetanseområde":"Tofaktorautentisering",
-      "Nivå":10,
-      "Prosjekt\/Oppgave":"Implementert 2FA i webapplikasjon"
-    },
-    {
-      "Domene":"Informasjonsteknologi",
-      "Fagområde":"Teknologiforståelse",
-      "Kjerneelement":"Digital sikkerhet",
-      "Læreplanmål":"Læreplanmål - Tofaktorautentisering",
-      "Kompetanseområde":"Tofaktorautentisering",
-      "Nivå":10,
-      "Prosjekt\/Oppgave":"Testet bruk av SMS og e-post som 2FA"
-    },
-    {
-      "Domene":"Informasjonsteknologi",
-      "Fagområde":"Teknologiforståelse",
-      "Kjerneelement":"Digital sikkerhet",
-      "Læreplanmål":"Læreplanmål - Tofaktorautentisering",
-      "Kompetanseområde":"Tofaktorautentisering",
-      "Nivå":10,
-      "Prosjekt\/Oppgave":"Integrert 2FA med Microsoft Entra ID"
-    },
-    {
-      "Domene":"Informasjonsteknologi",
-      "Fagområde":"Teknologiforståelse",
-      "Kjerneelement":"Digital sikkerhet",
-      "Læreplanmål":"Læreplanmål - Sikkerhetskopiering",
-      "Kompetanseområde":"Sikkerhetskopiering",
-      "Nivå":6,
-      "Prosjekt\/Oppgave":"Automatisert backup med PowerShell"
-    },
-    {
-      "Domene":"Informasjonsteknologi",
-      "Fagområde":"Teknologiforståelse",
-      "Kjerneelement":"Digital sikkerhet",
-      "Læreplanmål":"Læreplanmål - Sikkerhetskopiering",
-      "Kompetanseområde":"Sikkerhetskopiering",
-      "Nivå":6,
-      "Prosjekt\/Oppgave":"Konfigurert rsync for lokal sikkerhetskopi"
-    },
-    {
-      "Domene":"Informasjonsteknologi",
-      "Fagområde":"Teknologiforståelse",
-      "Kjerneelement":"Digital sikkerhet",
-      "Læreplanmål":"Læreplanmål - Sikkerhetskopiering",
-      "Kompetanseområde":"Sikkerhetskopiering",
-      "Nivå":6,
-      "Prosjekt\/Oppgave":"Lagret sikkerhetskopier i skyen"
-    },
-    {
-      "Domene":"Medieproduksjon",
-      "Fagområde":"Produksjon og historiefortelling",
-      "Kjerneelement":"Medieproduksjon",
-      "Læreplanmål":"Læreplanmål - Kameraoppsett",
-      "Kompetanseområde":"Kameraoppsett",
-      "Nivå":7,
-      "Prosjekt\/Oppgave":"Filmet kampanjevideo"
-    },
-    {
-      "Domene":"Medieproduksjon",
-      "Fagområde":"Produksjon og historiefortelling",
-      "Kjerneelement":"Medieproduksjon",
-      "Læreplanmål":"Læreplanmål - Kameraoppsett",
-      "Kompetanseområde":"Kameraoppsett",
-      "Nivå":7,
-      "Prosjekt\/Oppgave":"Satt opp flerkameraproduksjon"
-    },
-    {
-      "Domene":"Medieproduksjon",
-      "Fagområde":"Produksjon og historiefortelling",
-      "Kjerneelement":"Medieproduksjon",
-      "Læreplanmål":"Læreplanmål - Kameraoppsett",
-      "Kompetanseområde":"Kameraoppsett",
-      "Nivå":7,
-      "Prosjekt\/Oppgave":"Testet kameravinkler og fokus"
-    },
-    {
-      "Domene":"Medieproduksjon",
-      "Fagområde":"Produksjon og historiefortelling",
-      "Kjerneelement":"Medieproduksjon",
-      "Læreplanmål":"Læreplanmål - Lyssetting",
-      "Kompetanseområde":"Lyssetting",
-      "Nivå":10,
-      "Prosjekt\/Oppgave":"Planla lysrigg for filmopptak"
-    },
-    {
-      "Domene":"Medieproduksjon",
-      "Fagområde":"Produksjon og historiefortelling",
-      "Kjerneelement":"Medieproduksjon",
-      "Læreplanmål":"Læreplanmål - Lyssetting",
-      "Kompetanseområde":"Lyssetting",
-      "Nivå":10,
-      "Prosjekt\/Oppgave":"Testet mykt og hardt lys"
-    },
-    {
-      "Domene":"Medieproduksjon",
-      "Fagområde":"Produksjon og historiefortelling",
-      "Kjerneelement":"Medieproduksjon",
-      "Læreplanmål":"Læreplanmål - Lyssetting",
-      "Kompetanseområde":"Lyssetting",
-      "Nivå":10,
-      "Prosjekt\/Oppgave":"Brukte fargefiltre for effekt"
-    },
-    {
-      "Domene":"Medieproduksjon",
-      "Fagområde":"Produksjon og historiefortelling",
-      "Kjerneelement":"Medieproduksjon",
-      "Læreplanmål":"Læreplanmål - Storyboarding",
-      "Kompetanseområde":"Storyboarding",
-      "Nivå":10,
-      "Prosjekt\/Oppgave":"Lagde storyboard for reklamefilm"
-    },
-    {
-      "Domene":"Medieproduksjon",
-      "Fagområde":"Produksjon og historiefortelling",
-      "Kjerneelement":"Medieproduksjon",
-      "Læreplanmål":"Læreplanmål - Storyboarding",
-      "Kompetanseområde":"Storyboarding",
-      "Nivå":10,
-      "Prosjekt\/Oppgave":"Brukte Canva til visuell plan"
-    },
-    {
-      "Domene":"Medieproduksjon",
-      "Fagområde":"Produksjon og historiefortelling",
-      "Kjerneelement":"Medieproduksjon",
-      "Læreplanmål":"Læreplanmål - Storyboarding",
-      "Kompetanseområde":"Storyboarding",
-      "Nivå":10,
-      "Prosjekt\/Oppgave":"Presenterte storyboard for kunde"
-    },
-    {
-      "Domene":"Medieproduksjon",
-      "Fagområde":"Design og visuell kommunikasjon",
-      "Kjerneelement":"Design",
-      "Læreplanmål":"Læreplanmål - Adobe Illustrator",
-      "Kompetanseområde":"Adobe Illustrator",
-      "Nivå":7,
-      "Prosjekt\/Oppgave":"Designet brosjyre"
-    },
-    {
-      "Domene":"Medieproduksjon",
-      "Fagområde":"Design og visuell kommunikasjon",
-      "Kjerneelement":"Design",
-      "Læreplanmål":"Læreplanmål - Adobe Illustrator",
-      "Kompetanseområde":"Adobe Illustrator",
-      "Nivå":7,
-      "Prosjekt\/Oppgave":"Laget logo i vektorgrafikk"
-    },
-    {
-      "Domene":"Medieproduksjon",
-      "Fagområde":"Design og visuell kommunikasjon",
-      "Kjerneelement":"Design",
-      "Læreplanmål":"Læreplanmål - Adobe Illustrator",
-      "Kompetanseområde":"Adobe Illustrator",
-      "Nivå":7,
-      "Prosjekt\/Oppgave":"Lagde plakat til arrangement"
-    },
-    {
-      "Domene":"Medieproduksjon",
-      "Fagområde":"Design og visuell kommunikasjon",
-      "Kjerneelement":"Design",
-      "Læreplanmål":"Læreplanmål - Typografi",
-      "Kompetanseområde":"Typografi",
-      "Nivå":9,
-      "Prosjekt\/Oppgave":"Brukte typografi i webdesign"
-    },
-    {
-      "Domene":"Medieproduksjon",
-      "Fagområde":"Design og visuell kommunikasjon",
-      "Kjerneelement":"Design",
-      "Læreplanmål":"Læreplanmål - Typografi",
-      "Kompetanseområde":"Typografi",
-      "Nivå":9,
-      "Prosjekt\/Oppgave":"Laget bokomslag med fontvalg"
-    },
-    {
-      "Domene":"Medieproduksjon",
-      "Fagområde":"Design og visuell kommunikasjon",
-      "Kjerneelement":"Design",
-      "Læreplanmål":"Læreplanmål - Typografi",
-      "Kompetanseområde":"Typografi",
-      "Nivå":9,
-      "Prosjekt\/Oppgave":"Eksperimenterte med fontpar"
-    },
-    {
-      "Domene":"Medieproduksjon",
-      "Fagområde":"Design og visuell kommunikasjon",
-      "Kjerneelement":"Design",
-      "Læreplanmål":"Læreplanmål - Fargebruk",
-      "Kompetanseområde":"Fargebruk",
-      "Nivå":10,
-      "Prosjekt\/Oppgave":"Definerte fargepalett"
-    },
-    {
-      "Domene":"Medieproduksjon",
-      "Fagområde":"Design og visuell kommunikasjon",
-      "Kjerneelement":"Design",
-      "Læreplanmål":"Læreplanmål - Fargebruk",
-      "Kompetanseområde":"Fargebruk",
-      "Nivå":10,
-      "Prosjekt\/Oppgave":"Tilpasset farger for universell utforming"
-    },
-    {
-      "Domene":"Medieproduksjon",
-      "Fagområde":"Design og visuell kommunikasjon",
-      "Kjerneelement":"Design",
-      "Læreplanmål":"Læreplanmål - Fargebruk",
-      "Kompetanseområde":"Fargebruk",
-      "Nivå":10,
-      "Prosjekt\/Oppgave":"Evaluerte fargekontraster"
-    },
-    {
-      "Domene":"Medieproduksjon",
-      "Fagområde":"Lyd, bilde og redigering",
-      "Kjerneelement":"Lyd\/bilde",
-      "Læreplanmål":"Læreplanmål - Adobe Premiere",
-      "Kompetanseområde":"Adobe Premiere",
-      "Nivå":9,
-      "Prosjekt\/Oppgave":"Redigerte intervjuserie"
-    },
-    {
-      "Domene":"Medieproduksjon",
-      "Fagområde":"Lyd, bilde og redigering",
-      "Kjerneelement":"Lyd\/bilde",
-      "Læreplanmål":"Læreplanmål - Adobe Premiere",
-      "Kompetanseområde":"Adobe Premiere",
-      "Nivå":9,
-      "Prosjekt\/Oppgave":"Klippet musikkvideo"
-    },
-    {
-      "Domene":"Medieproduksjon",
-      "Fagområde":"Lyd, bilde og redigering",
-      "Kjerneelement":"Lyd\/bilde",
-      "Læreplanmål":"Læreplanmål - Adobe Premiere",
-      "Kompetanseområde":"Adobe Premiere",
-      "Nivå":9,
-      "Prosjekt\/Oppgave":"Brukte effekter og overganger"
-    },
-    {
-      "Domene":"Medieproduksjon",
-      "Fagområde":"Lyd, bilde og redigering",
-      "Kjerneelement":"Lyd\/bilde",
-      "Læreplanmål":"Læreplanmål - Videoredigering",
-      "Kompetanseområde":"Videoredigering",
-      "Nivå":8,
-      "Prosjekt\/Oppgave":"Produserte kortfilm"
-    },
-    {
-      "Domene":"Medieproduksjon",
-      "Fagområde":"Lyd, bilde og redigering",
-      "Kjerneelement":"Lyd\/bilde",
-      "Læreplanmål":"Læreplanmål - Videoredigering",
-      "Kompetanseområde":"Videoredigering",
-      "Nivå":8,
-      "Prosjekt\/Oppgave":"Synkroniserte lyd og bilde"
-    },
-    {
-      "Domene":"Medieproduksjon",
-      "Fagområde":"Lyd, bilde og redigering",
-      "Kjerneelement":"Lyd\/bilde",
-      "Læreplanmål":"Læreplanmål - Videoredigering",
-      "Kompetanseområde":"Videoredigering",
-      "Nivå":8,
-      "Prosjekt\/Oppgave":"Eksporterte i ulike formater"
-    },
-    {
-      "Domene":"Medieproduksjon",
-      "Fagområde":"Lyd, bilde og redigering",
-      "Kjerneelement":"Lyd\/bilde",
-      "Læreplanmål":"Læreplanmål - Lydmiksing",
-      "Kompetanseområde":"Lydmiksing",
-      "Nivå":5,
-      "Prosjekt\/Oppgave":"Mikset lydspor til film"
-    },
-    {
-      "Domene":"Medieproduksjon",
-      "Fagområde":"Lyd, bilde og redigering",
-      "Kjerneelement":"Lyd\/bilde",
-      "Læreplanmål":"Læreplanmål - Lydmiksing",
-      "Kompetanseområde":"Lydmiksing",
-      "Nivå":5,
-      "Prosjekt\/Oppgave":"Brukte EQ og kompresjon"
-    },
-    {
-      "Domene":"Medieproduksjon",
-      "Fagområde":"Lyd, bilde og redigering",
-      "Kjerneelement":"Lyd\/bilde",
-      "Læreplanmål":"Læreplanmål - Lydmiksing",
-      "Kompetanseområde":"Lydmiksing",
-      "Nivå":5,
-      "Prosjekt\/Oppgave":"Redigerte dialog og lydeffekter"
+      "Navn": "Lars Hansen",
+      "Profesjon": "Frontend-utvikler",
+      "Overordnetkategori": "Webutvikling",
+      "Domene": "Informasjonsteknologi",
+      "Fagområde": "Konseptutvikling og programmering",
+      "Kjerneelement": "Programmering",
+      "Læreplanmål": "Læreplanmål - HTML/CSS",
+      "Kompetanseområde": "HTML/CSS",
+      "Yrke": "Webdesigner",
+      "Nivå": 9,
+      "Prosjekt/Oppgave": "Optimaliserte CSS for ytelse og mobil",
+      "Beskrivelse": "Forbedret lastetid og mobiltilpasning.",
+      "Periode": "Vår 2023"
     }
   ],
   "layout": {},

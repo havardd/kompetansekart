@@ -7,6 +7,11 @@
 </head>
 <body>
   <div style="max-width: 1200px; margin: 0 auto; padding: 2em 1em;">
+    <nav style="margin-bottom:2em;">
+      <a href="index.html" class="menu-link">Hjem</a>
+      <a href="admin.html" class="menu-link">Admin</a>
+      <a href="meny.html" class="menu-link">Meny</a>
+    </nav>
     <h1 style="margin-bottom:0.5em;">Universelt Kompetansekart</h1>
     <p style="color:#4b5563; margin-bottom:2em; font-size:1.1em;">
       Visualiser og utforsk kompetanseområder. Last opp eller last ned kompetansekart-data, eller eksporter visualiseringen som bilde.
@@ -25,33 +30,32 @@
   <script src="app.js"></script>
   <script>
 function renderKompetansekart(json) {
-  // Bygg sunburst-data
-  const data = json.data;
-  // Nivårekkefølge
+  // Ny nivårekkefølge med Domene før Profesjon
   const levels = [
+    "Navn",
     "Domene",
+    "Profesjon",
+    "Overordnetkategori",
     "Fagområde",
     "Kjerneelement",
     "Læreplanmål",
     "Kompetanseområde",
+    "Yrke",
     "Prosjekt/Oppgave"
   ];
 
-  // For å støtte både "Prosjekt" og "Oppgave" som siste nivå
   function getProsjektOppgave(row) {
     return row["Prosjekt/Oppgave"] || row["Prosjekt"] || row["Oppgave"] || "";
   }
 
-  // Bygg id, parent, label og customdata for alle rader
   const ids = [];
   const labels = [];
   const parents = [];
   const customdata = [];
 
-  // For å unngå duplikater
   const nodeSet = new Set();
 
-  data.forEach(row => {
+  json.data.forEach(row => {
     let path = [];
     levels.forEach((level, i) => {
       let value;
@@ -62,35 +66,36 @@ function renderKompetansekart(json) {
       }
       path.push(value);
 
-      // Lag unik id for denne noden
       const id = path.join("/");
       if (!nodeSet.has(id) && value) {
         nodeSet.add(id);
         ids.push(id);
         labels.push(value);
 
-        // Parent er path til forrige nivå, eller "" for root
         if (i === 0) {
           parents.push("");
         } else {
           parents.push(path.slice(0, -1).join("/"));
         }
 
-        // Legg til customdata for siste nivå, ellers tomt
+        // Legg til customdata for Prosjekt/Oppgave, ellers tomt
         if (i === levels.length - 1) {
           customdata.push([
             row.Periode || "Trenger mer informasjon",
             row.Beskrivelse || "Trenger mer informasjon",
-            row.Nivå !== undefined && row.Nivå !== null && row.Nivå !== "" ? row.Nivå : "Trenger mer informasjon"
+            row.Nivå !== undefined && row.Nivå !== null && row.Nivå !== "" ? row.Nivå : "Trenger mer informasjon",
+            row.Profesjon || "",
+            row.Overordnetkategori || "",
+            row.Navn || "",
+            row.Yrke || ""
           ]);
         } else {
-          customdata.push(["", "", ""]);
+          customdata.push(["", "", "", "", "", "", ""]);
         }
       }
     });
   });
 
-  // Sunburst-data
   const sunburstData = [{
     type: 'sunburst',
     ids: ids,
@@ -101,7 +106,11 @@ function renderKompetansekart(json) {
       '<b>%{label}</b><br>' +
       'Periode: %{customdata[0]}<br>' +
       'Beskrivelse: %{customdata[1]}<br>' +
-      'Nivå: %{customdata[2]}<extra></extra>',
+      'Nivå: %{customdata[2]}<br>' +
+      'Profesjon: %{customdata[3]}<br>' +
+      'Overordnetkategori: %{customdata[4]}<br>' +
+      'Navn: %{customdata[5]}<br>' +
+      'Yrke: %{customdata[6]}<extra></extra>',
     branchvalues: 'total',
     maxdepth: levels.length
   }];
@@ -112,6 +121,41 @@ function renderKompetansekart(json) {
   };
 
   Plotly.newPlot('kompetansekart', sunburstData, layout);
+
+  // Klikk: vis kun valgt Prosjekt/Oppgave med hoverinfo i sirkelen
+  var kompetanseDiv = document.getElementById('kompetansekart');
+  kompetanseDiv.on('plotly_click', function(eventData) {
+    const point = eventData.points && eventData.points[0];
+    if (!point) return;
+    // Sjekk om det er Prosjekt/Oppgave-nivå (ytterste nivå)
+    if (point.id && point.id.split('/').length === levels.length) {
+      // Finn customdata for valgt node
+      const label = point.label;
+      const cd = point.customdata || [];
+      // Bygg et nytt sunburst med kun dette elementet
+      Plotly.newPlot('kompetansekart', [{
+        type: 'sunburst',
+        ids: [label],
+        labels: [label],
+        parents: [""],
+        customdata: [cd],
+        hovertemplate:
+          '<b>%{label}</b><br>' +
+          'Periode: %{customdata[0]}<br>' +
+          'Beskrivelse: %{customdata[1]}<br>' +
+          'Nivå: %{customdata[2]}<br>' +
+          'Profesjon: %{customdata[3]}<br>' +
+          'Overordnetkategori: %{customdata[4]}<br>' +
+          'Navn: %{customdata[5]}<br>' +
+          'Yrke: %{customdata[6]}<extra></extra>',
+        branchvalues: 'total',
+        maxdepth: 1
+      }], {
+        title: 'Detaljert visning',
+        height: 400
+      });
+    }
+  });
 }
 
 function loadDefaultKompetansekart() {
@@ -122,10 +166,8 @@ function loadDefaultKompetansekart() {
     });
 }
 
-// Last inn standarddata fra server
 loadDefaultKompetansekart();
 
-// Lytt på filopplasting
 document.getElementById('loadConfig').addEventListener('change', function(event) {
   const file = event.target.files[0];
   if (!file) return;
@@ -141,7 +183,6 @@ document.getElementById('loadConfig').addEventListener('change', function(event)
   reader.readAsText(file);
 });
 
-// Tilbakestill visning-knapp
 document.getElementById('resetViewBtn').addEventListener('click', function() {
   loadDefaultKompetansekart();
 });

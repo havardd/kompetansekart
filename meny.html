@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <title>Menyadministrasjon</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .menu-admin-table { width:100%; max-width:500px; background:#fff; border-radius:8px; box-shadow:0 2px 8px #0001; }
+    .menu-admin-table th, .menu-admin-table td { padding:0.6em 0.5em; }
+    .menu-admin-table th { background:#e8eef7; }
+    .menu-admin-table tr:not(:last-child) td { border-bottom:1px solid #f0f2f7; }
+    nav.menu-nav {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      margin-bottom: 2em;
+    }
+  </style>
+</head>
+<body>
+  <nav class="menu-nav">
+    <a href="index.html" class="menu-link">Hjem</a>
+    <a href="admin.html" class="menu-link">Admin</a>
+    <a href="meny.html" class="menu-link">Meny</a>
+  </nav>
+  <div style="max-width: 600px; margin: 0 auto; padding: 2em 1em;">
+    <h1 style="margin-bottom:0.5em;">Menyadministrasjon</h1>
+    <form id="addMenuForm" style="margin-bottom:2em;">
+      <input type="text" id="menuText" placeholder="Menynavn" required class="small-input" style="max-width:200px;">
+      <input type="text" id="menuHref" placeholder="Lenke (f.eks. admin.html)" required class="small-input" style="max-width:200px;">
+      <button type="submit">Legg til menypunkt</button>
+    </form>
+    <table class="menu-admin-table" id="menuTable">
+      <thead>
+        <tr><th>Menynavn</th><th>Lenke</th><th>Slett</th></tr>
+      </thead>
+      <tbody>
+        <!-- Dynamisk innhold -->
+      </tbody>
+    </table>
+  </div>
+  <script>
+    // Enkel lokal lagring av menypunkter (kun i browser)
+    const defaultMenu = [
+      { text: "Hjem", href: "index.html" },
+      { text: "Admin", href: "admin.html" },
+      { text: "Meny", href: "meny.html" }
+    ];
+    function getMenu() {
+      return JSON.parse(localStorage.getItem("customMenu") || "null") || defaultMenu;
+    }
+    function setMenu(menu) {
+      localStorage.setItem("customMenu", JSON.stringify(menu));
+    }
+    function renderMenuTable() {
+      const menu = getMenu();
+      const tbody = document.getElementById("menuTable").querySelector("tbody");
+      tbody.innerHTML = "";
+      menu.forEach((item, idx) => {
+        tbody.innerHTML += `<tr>
+          <td>${item.text}</td>
+          <td>${item.href}</td>
+          <td><button onclick="deleteMenuItem(${idx})">Slett</button></td>
+        </tr>`;
+      });
+    }
+    function deleteMenuItem(idx) {
+      let menu = getMenu();
+      menu.splice(idx, 1);
+      setMenu(menu);
+      renderMenuTable();
+    }
+    document.getElementById("addMenuForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const text = document.getElementById("menuText").value.trim();
+      const href = document.getElementById("menuHref").value.trim();
+      if (!text || !href) return;
+      let menu = getMenu();
+      menu.push({ text, href });
+      setMenu(menu);
+      renderMenuTable();
+      this.reset();
+    });
+    renderMenuTable();
+  </script>
+</body>
+</html>
